@@ -1,0 +1,84 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<title>alert弹框测试</title>
+
+
+<script  src="../../app/public/js/okayApp.core-1.0.js" ></script>
+<script  src="../../app/public/js/okayApp.core.plugin.js" ></script>
+<style>
+.oa-alert{
+	margin-bottom: 15px;
+	padding: 10px;
+	border: 1px solid #0c7cb5;
+	border-radius: 0;
+}
+
+*, :before, :after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.oa-alert>.oa-close:first-child{
+	float: right;
+	height: auto;
+	margin: -3px -5px auto auto;
+}
+
+
+button.oa-close {
+	padding: 0;
+	cursor: pointer;
+	background: 0 0;
+	border: 0;
+	-webkit-appearance: none;
+}
+.oa-close{
+	display: inline-block;
+	text-align: center;
+	width: 24px;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 24px;
+	color: #000;
+	text-shadow: 0 1px 0 #fff;
+	opacity: .2;
+	-webkit-transition: all .3s;
+	transition: all .3s;
+}
+
+
+</style>
+</head>
+<body>
+	<div id="d1" style="background:#eeeeee;" class="oa-alert" >
+		<button type="button" class="oa-close">&times;</button>
+		<p>alert测试。。。。。。。。。。。。。。。。</p>
+	</div>
+	
+	<button id="close">关闭</button>
+	<button id="open">激活</button>
+	
+</body>
+<script>
+	
+
+	$$('#close').on('click' , function(){
+		$$('#d1').alert('close') ;
+	});
+	$$('#open').on('click' , function(){
+		$$('#d1').alert() ;
+		
+	});
+	
+	$$(document).on('close.alert.okayapp',function(){
+		alert('alert关闭前') ;
+	}) ;
+	$$(document).on('closed.alert.okayapp',function(){
+		alert('alert关闭后') ;
+	}) ;
+	
+</script>
+</html>

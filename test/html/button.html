@@ -1,0 +1,59 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<title>按钮测试</title>
+
+
+<script  src="../../app/public/js/okayApp.core-1.0.js" ></script>
+<script  src="../../app/public/js/okayApp.core.plugin.js" ></script>
+<style>
+.oa-btn{
+	display: inline-block;
+	margin-bottom: 0;
+	padding: .625em 1em;
+	vertical-align: middle;
+	font-size: 1.6rem;
+	font-weight: 400;
+	line-height: 1.2;
+	text-align: center;
+	white-space: nowrap;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 0;
+	cursor: pointer;
+	outline: 0;
+	-webkit-appearance: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-transition: background-color 300ms ease-out,border-color 300ms ease-out;
+	transition: background-color 300ms ease-out,border-color 300ms ease-out;
+}
+.oa-btn-primary{
+	color: #fff;
+	background-color: #0e90d2;
+	border-color: #0e90d2;
+}
+</style>
+</head>
+<body>
+	<button id="b" class="oa-btn oa-btn-primary" data-oa-loading="{spinner: 'circle-o-notch', loadingText: '加载中...', resetText: '加载过了'}">按钮测试</button>
+</body>
+
+<script>
+
+$$('#b').on('click' ,function(){
+	$btn = $$(this) ;
+	$btn.button('loading');
+	setTimeout(function(){
+		$btn.button('reset') ;
+	} , 2000) ;
+}) ;
+	
+	
+</script>
+</html>

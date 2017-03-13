@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> 折叠面板测试</title>
+
+
+<script  src="../../app/public/js/okayApp.core-1.0.js" ></script>
+<script  src="../../app/public/js/okayApp.core.plugin.js" ></script>
+
+<style>
+*{
+	padding:0px;
+	margin:0px;
+}
+.oa-panel-group{
+	margin:20px 20px;
+}
+.oa-panel{
+	margin-top:5px;
+}
+.oa-panel-title{
+	background: #eeeeee;
+	border:1px solid #aaaaaa;
+	width:50%;
+	height:30px;
+	line-height: 30px;
+	/*text-align: center;*/
+}
+.oa-panel-body-wrap{
+	background: #ffffff;
+	border:1px solid #aaaaaa;
+	width:50%;
+	margin-top:0px;
+}
+</style>
+
+</head>
+
+<body>
+	
+	<div class="oa-panel-group" data-oa-collapse>
+		<div class="oa-panel oa-panel-default">
+			<div class="oa-panel-heald">
+				<h4 class="oa-panel-title">面板1</h4>
+			</div>
+			<div class="oa-panel-body-wrap">
+				<div class="oa-panel-body">
+					我是面板1---------------------------<br>
+					我是面板1---------------------------<br>
+					我是面板1---------------------------<br>
+					我是面板1---------------------------<br>
+					我是面板1---------------------------<br>
+					我是面板1---------------------------<br>
+					我是面板1---------------------------<br>
+				</div>
+			</div>
+		</div>
+
+		<div class="oa-panel oa-panel-default">
+			<div class="oa-panel-heald">
+				<h4 class="oa-panel-title">面板2</h4>
+			</div>
+			<div class="oa-panel-body-wrap">
+				<div class="oa-panel-body">
+					我是面板2---------------------------<br>
+					我是面板2---------------------------<br>
+					我是面板2---------------------------<br>
+					我是面板2---------------------------<br>
+					我是面板2---------------------------<br>
+					我是面板2---------------------------<br>
+					我是面板2---------------------------<br>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<script>
+
+	//$$('.oa-panel-group').collapse({toggle:false}) ;
+
+	$$('.oa-panel-title').on('open.collapse.okayapp' , function(){
+		alert('面板打开前') ;
+		console.info(arguments) ;
+	}) ;
+	$$('.oa-panel-title').on('opened.collapse.okayapp' , function(){
+		alert('面板打开后') ;
+		console.info(arguments) ;
+	}) ;
+	$$('.oa-panel-title').on('close.collapse.okayapp' , function(){
+		alert('面板关闭前') ;
+		console.info(arguments) ;
+	}) ;
+	$$('.oa-panel-title').on('closed.collapse.okayapp' , function(){
+		alert('面板关闭后') ;
+		console.info(arguments) ;
+	}) ;
+
+
+	
+	/*$$(document).ready(function(){
+		//初始化panel
+		$$('.oa-panel-group').each(function(i , v){
+			$panel_group = $$(this);
+			$panels = $panel_group.find('.oa-panel');
+			$panels.each(function(i,v){
+				$panel = $$(this) ;
+				if(i !=0){
+					$panel.find('.oa-panel-body-wrap').slideUp(0) ;
+					$panel.find('.oa-panel-title').attr('state' ,'close') ;
+				}
+				else{
+					$panel.find('.oa-panel-title').attr('state' ,'open') ;
+				}
+			});
+		});
+	}) ;
+
+	$$('.oa-panel-title').on('click' , function(){
+
+		var state = $$(this).attr('state') ;
+		$$('[state=open]').closest('div').next('div').slideUp(100) ;
+		$$('[state=open]').attr('state','close') ;
+		if(!state || state === 'open' ){
+			$$(this).closest('div').next('div').slideUp(100) ;
+			$$(this).attr('state' , 'close') ;
+		}
+		else if( state === 'close'  ){
+			$$(this).closest('div').next('div').slideDown(100) ;
+			$$(this).attr('state' , 'open') ;
+		}
+	}) ;
+*/
+
+</script>
+
+</html>
