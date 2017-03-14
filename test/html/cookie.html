@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>cookie操作</title>
+	
+	<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+
+	<!-- // <script  src="../../app/public/js/okayApp.core-1.0.js" ></script>
+	// <script  src="../../app/public/js/okayApp.core.plugin.js" ></script> -->
+
+</head>
+<body>
+	<button id="set">设置cookie</button>
+	<button id="get">获取cookie</button>
+	<button id="unset">删除cookie</button>
+</body>
+<script>
+	
+
+	// cookie操作
+	OA_Untils = {} ;
+	OA_Untils.cookie = {
+		get : function(name){
+			var cookieName = encodeURIComponent(name) + '=' ;
+			var cookieValue = null ;
+			var cookieStart = document.cookie.indexOf(cookieName);
+			var cookieEnd ;
+
+			if(cookieStart > -1){
+				cookieEnd = document.cookie.indexOf(';',cookieStart) ;
+				if(cookieEnd <= -1){
+					cookieEnd = document.cookie.length ;
+				}
+				cookieValue = decodeURIComponent(document.cookie.substring(
+					cookieStart * 1 + cookieName.length , cookieEnd )) ;
+			}
+			return cookieValue ;
+		} ,
+		/*
+			name:cookie名称
+			value:cookie值
+			expires:超时时间
+			path:存放路径
+			domain:存放域名
+			secure:是否使用https
+		*/
+		set : function(name, value, expires, path, domain, secure){
+			var cookieText = encodeURIComponent(name) + '=' +
+				encodeURIComponent(value) ;
+
+			if(expires instanceof Date){
+				cookieText += '; expires=' + expires.toGMTString() ;
+			}
+
+			if(path){
+				cookieText += '; path=' + path ;
+			}
+
+			if(domain){
+				cookieText += '; domain=' + domian ;
+			}
+
+			if(secure){
+				cookieText += '; secure' ;
+			}
+
+			document.cookie = cookieText ;
+		},
+		unset : function(name, path, domain, secure){
+			this.set(name, '', new Date(0), path, domain, secure) ;
+		}
+	} ;
+
+
+
+	// cookie 测试
+
+	var name = 'userInfo' ;
+
+	document.querySelector('#set').onclick = function(){
+		var obj = {
+			'name':'baoxd',
+			'age':24
+		};
+		var obj_text = JSON.stringify(obj);
+		var value = obj_text ;
+		var expires = new Date();
+		expires.setDate(expires.getDate() + 30) ;
+		OA_Untils.cookie.set(name,value,expires);
+		window.location.href = window.location.href ;
+	}
+
+	document.querySelector('#get').onclick = function(){
+		var userInfo = OA_Untils.cookie.get(name) ;
+		alert(JSON.stringify(userInfo)) ;
+		console.info(userInfo) ;
+	}
+
+	document.querySelector('#unset').onclick = function(){
+		OA_Untils.cookie.unset(name) ;
+	}
+
+
+</script>
+</html>

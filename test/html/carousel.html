@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播图</title>
+	<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="../public/css/amazeui.css">
+	<script  src="../../app/public/js/okayApp.core-1.0.js" ></script>
+	<script  src="../../app/public/js/okayApp.core.plugin.js" ></script>
+
+
+<style>
+
+*{ margin: 0; padding: 0; text-decoration: none;}
+body { overflow: hidden;padding:10px;}
+.oa-carousel{
+	width: 300px; 
+	height: 200px; 
+	/*border: 3px solid #333; */
+	overflow: hidden; 
+	position: relative;
+}
+.oa-carousel-list{
+	/*width: 4200px; */
+	height: auto; 
+	position: absolute; 
+	z-index: 1;
+}
+.oa-carousel-list>img{
+	float:left ;
+}
+.oa-carousel-buttons{
+	position: absolute;
+	/*width:200px;*/
+	/*height:20px;*/
+	z-index: 2 ;
+	bottom:10px;
+	/*left:200px;*/
+}
+
+.oa-carousel-buttons>span{
+	cursor:pointer ;
+	float:left ;
+	border: 1px solid #fff;
+	width: 10px; height: 10px;
+	border-radius:50%;
+	background: #333; 
+	margin-right: 28px;
+}
+.oa-carousel-buttons>span.on{
+	background: orangered ;
+}
+.oa-carousel-arrow { 
+	cursor: pointer; display: none; line-height: 39px; 
+	text-align: center; font-size: 36px; font-weight: bold; width: 40px; 
+	height: 40px;  position: absolute; z-index: 2; top: 180px; 
+	background-color: RGBA(0,0,0,.3); color: #fff;
+}
+.oa-carousel-arrow:hover { background-color: RGBA(0,0,0,.7);}
+.oa-carousel:hover .oa-carousel-arrow { display: block;}
+.oa-carousel-arrow-prev { left: 20px;}
+.oa-carousel-arrow-next { right: 20px;}
+
+
+</style>
+
+</head>
+<body>
+
+	<div class="oa-carousel" data-oa-carousel="{interval: 3000,showbutton:'true',showarrow:'true',touch:'false'}">
+	    <div  style="" class="oa-carousel-list">
+	        <img src="../public/images/carousel/pure-4.jpg" alt="1" class="oa-carousel-list-item"/>
+	        <img src="../public/images/carousel/pure-1.jpg" alt="1" class="oa-carousel-list-item"/>
+	        <img src="../public/images/carousel/pure-2.jpg" alt="2" class="oa-carousel-list-item"/>
+	        <img src="../public/images/carousel/pure-3.jpg" alt="3" class="oa-carousel-list-item"/>
+	        <img src="../public/images/carousel/pure-4.jpg" alt="4" class="oa-carousel-list-item"/>
+	        <img src="../public/images/carousel/pure-1.jpg" alt="5" class="oa-carousel-list-item"/>
+	    </div>
+	  <!--   <div  class="oa-carousel-buttons">
+	        <span index="1" class="on"></span>
+	        <span index="2"></span>
+	        <span index="3"></span>
+	        <span index="4"></span>
+	    </div> -->
+	   <!--  <a href="javascript:;"  class="oa-carousel-arrow oa-carousel-arrow-prev">&lt;</a>
+	    <a href="javascript:;" iclass="oa-carousel-arrow oa-carousel-arrow-next">&gt;</a> -->
+	</div>
+
+
+	<button id="active">激活轮播图</button>
+	<button id="play">开始</button>
+	<button id="pause">暂停</button>
+	<button id="next">下一个</button>
+	<button id="prev">上一个</button>
+	去第<input type="text" id="index">个
+	<button id="goIndex">go</button>
+
+	
+</body>
+<script>
+	
+	// $$('#active').on('click' , function(){
+	// 	var settings = {
+	// 			'interval':3000 ,
+	// 			'showbutton':'false' ,
+	// 			'showarrow':'false'
+	// 	} ;
+
+	// 	$$('.oa-carousel').carousel(settings) ;
+	// }) ;
+
+	$$('#play').on('click',function(){
+		$$('.oa-carousel').carousel('play') ;
+	}) ;
+
+	$$('#pause').on('click',function(){
+		$$('.oa-carousel').carousel('pause') ;
+	}) ;
+
+	$$('#next').on('click',function(){
+		$$('.oa-carousel').carousel('next') ;
+	}) ;
+
+	$$('#prev').on('click',function(){
+		$$('.oa-carousel').carousel('prev') ;
+	}) ;
+
+	$$('#goIndex').on('click',function(){
+		var index = $$('#index').val() ;
+		$$('.oa-carousel').carousel(index) ;
+	}) ;
+
+</script>
+
+
+</html>

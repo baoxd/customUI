@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>日历组件</title>
+	<meta noae="viewport"
+		content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+
+	<link rel="stylesheet" href="../public/css/amazeui.css">
+	<script  src="../../app/public/js/okayApp.core-1.0.js" ></script>
+	<script  src="../../app/public/js/okayApp.core.plugin.js" ></script>
+
+<style>
+.oa-form-field{
+	width:50%;
+	margin:20px;
+}
+</style>
+
+</head>
+<body>
+	<!-- data-oa-datepicker="{locale:'en_us',beforeDisable:'true',format:'yyyy年MM月dd日',autoClose:'false'}" -->
+	<input type="text" style="position:relative;top:100px;left:50px;"  class="oa-form-field" placefolder="日历组件"  />
+
+
+	<!-- <table width="50%" >
+		<thead>
+			<tr >
+				<th>日</th>
+				<th>一</th>
+				<th>二</th>
+				<th>三</th>
+				<th>四</th>
+				<th>五</th>
+				<th>六</th>
+			</tr>
+			<tbody>
+				
+			</tbody>
+		</thead>
+	</table> -->
+
+
+	<!-- <div class="oa-datepicker oa-datepicker-dropdown" style="display: block; top: 832.2px; left: 464px;">
+		<div class="oa-datepicker-caret" style="display: none;"></div>
+		<div class="oa-datepicker-days" style="display: block;">
+			<table class="oa-datepicker-table">
+				<thead>
+					<tr class="oa-datepicker-header">
+						<th class="oa-datepicker-prev">
+							<i class="oa-datepicker-prev-icon"></i>
+						</th>
+						<th class="oa-datepicker-switch" colspan="5">
+							<div class="oa-datepicker-select">2017年 八月</div>
+						</th>
+						<th class="oa-datepicker-next">
+							<i class="oa-datepicker-next-icon"></i>
+						</th>
+					</tr>
+					<tr>
+						<th class="oa-datepicker-dow">一</th>
+						<th class="oa-datepicker-dow">二</th>
+						<th class="oa-datepicker-dow">三</th>
+						<th class="oa-datepicker-dow">四</th>
+						<th class="oa-datepicker-dow">五</th>
+						<th class="oa-datepicker-dow">六</th>
+						<th class="oa-datepicker-dow">日</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="oa-datepicker-day oa-datepicker-old">31</td>
+						<td class="oa-datepicker-day ">1</td>
+						<td class="oa-datepicker-day ">2</td>
+						<td class="oa-datepicker-day ">3</td>
+						<td class="oa-datepicker-day ">4</td>
+						<td class="oa-datepicker-day ">5</td>
+						<td class="oa-datepicker-day ">6</td>
+					</tr>
+					<tr>
+						<td class="oa-datepicker-day ">7</td>
+						<td class="oa-datepicker-day ">8</td>
+						<td class="oa-datepicker-day ">9</td>
+						<td class="oa-datepicker-day ">10</td>
+						<td class="oa-datepicker-day ">11</td>
+						<td class="oa-datepicker-day ">12</td>
+						<td class="oa-datepicker-day ">13</td>
+					</tr>
+					<tr>
+						<td class="oa-datepicker-day ">14</td>
+						<td class="oa-datepicker-day ">15</td>
+						<td class="oa-datepicker-day ">16</td>
+						<td class="oa-datepicker-day ">17</td>
+						<td class="oa-datepicker-day ">18</td>
+						<td class="oa-datepicker-day ">19</td>
+						<td class="oa-datepicker-day ">20</td>
+					</tr>
+					<tr>
+						<td class="oa-datepicker-day ">21</td>
+						<td class="oa-datepicker-day ">22</td>
+						<td class="oa-datepicker-day ">23</td>
+						<td class="oa-datepicker-day ">24</td>
+						<td class="oa-datepicker-day ">25</td>
+						<td class="oa-datepicker-day ">26</td>
+						<td class="oa-datepicker-day ">27</td>
+					</tr>
+					<tr>
+						<td class="oa-datepicker-day ">28</td>
+						<td class="oa-datepicker-day ">29</td>
+						<td class="oa-datepicker-day ">30</td>
+						<td class="oa-datepicker-day ">31</td>
+						<td class="oa-datepicker-day oa-datepicker-new">1</td>
+						<td class="oa-datepicker-day oa-datepicker-new">2</td>
+						<td class="oa-datepicker-day oa-datepicker-new">3</td>
+					</tr>
+					<tr>
+						<td class="oa-datepicker-day oa-datepicker-new">4</td>
+						<td class="oa-datepicker-day oa-datepicker-new">5</td>
+						<td class="oa-datepicker-day oa-datepicker-new">6</td>
+						<td class="oa-datepicker-day oa-datepicker-new">7</td>
+						<td class="oa-datepicker-day oa-datepicker-new">8</td>
+						<td class="oa-datepicker-day oa-datepicker-new">9</td>
+						<td class="oa-datepicker-day oa-datepicker-new">10</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+ -->
+
+ 	<div style="position:absolute;right:100px" id="test">
+ 		<button id="active">激活</button>
+	 	<button id="open">打开</button>
+	 	<button id="close">关闭</button>
+	 	<button id="prev">上一月</button>
+	 	<button id="next">下一月</button>
+	 	<button id="set">设置新时间</button>
+ 	</div>
+	
+</body>
+
+<script>
+	
+
+	$$('#active').on('click',function(){
+		var params = {
+			'locale':'zh_cn',
+			'beforeDisable':'true',
+			'format':'yyyy-MM-dd',
+			'autoClose':'true'
+		} ;
+		$$('input').datepicker(params) ;
+	}) ;
+
+	$$('#open').on('click',function(){
+		$$('input').datepicker('open') ;
+	}) ;
+
+	$$('#close').on('click',function(){
+		$$('input').datepicker('close') ;
+	}) ;
+
+	$$('#prev').on('click',function(){
+		$$('input').datepicker('prev') ;
+	});
+
+	$$('#next').on('click',function(){
+		$$('input').datepicker('next') ;
+	}) ;
+
+	$$('#set').on('click',function(){
+		var d = new Date() ;
+		d.setYear(1990) ;
+		d.setMonth(8) ;
+		d.setDate(24) ;
+		$$('input').datepicker('setValue',d) ;
+	});
+
+	// 选择日期后触发事件
+	$$('input').on('changeDate.datepicker.oa',function(e){
+		console.info(e) ;
+	});
+
+
+	// $$(document).on('click',function(){
+	// 	alert('我被点击了。。。。') ;
+	// }) ;
+
+	// var d = new Date();
+	// var days_arr = [] ;
+	// var first_day_month = OA_Untils['dateUtil'].moveToFirstDayOfMonth(d) ;
+	// var prev_diff =  first_day_month.getDay() ;
+	// var days = OA_Untils['dateUtil'].getDaysInMonth(d) ;
+
+	// // console.info('prev_diff====='+prev_diff) ;
+	// // console.info('days====='+days) ;
+
+	// var datepicker_html = '' ;
+
+	// for(var i = 0 ; i < 6 ; i++){
+	// 	var arr = [] ;
+	// 	datepicker_html +='<tr>' 
+	// 	for(var j = 0 ; j < 7 ; j++){
+	// 		var index = i * 7 + j ;
+	// 		// console.info(index+'=====') ;
+	// 		var diff_day = index - prev_diff ;
+	// 		var picker_d = OA_Untils['dateUtil'].addDays(first_day_month,diff_day) ;
+	// 		var picker_date = picker_d.getDate() ;
+
+	// 		var datetime =  OA_Untils['dateUtil'].format(picker_d,'yyyy-MM-dd') ;;
+	// 		var o = {
+	// 			'datetime' : datetime ,
+	// 			'picker_date':picker_date
+	// 		} ;
+	// 		arr.push(o) ;
+
+	// 		datepicker_html +='<td datetime='+datetime+'>'+picker_date+'</td>'
+
+	// 	}
+	// 	datepicker_html +='</tr>';
+	// 	days_arr.push(arr) ;
+	// }
+
+	// $$('tbody').append(datepicker_html) ;
+	// console.info(days_arr) ;
+
+
+</script>
+
+</html>
