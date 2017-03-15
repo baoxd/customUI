@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>下拉组件测试</title>
+
+<script  src="../../app/public/js/okayApp.core-1.0.js" ></script>
+<script  src="../../app/public/js/okayApp.core.plugin.js" ></script>
+
+<style>
+.oa-dropdown{
+	position: relative;
+	display: inline-block;
+}
+.oa-btn-primary{
+	color: #fff;
+	background-color: #0e90d2;
+	border-color: #0e90d2;
+}
+.oa-btn{
+	display: inline-block;
+	margin-bottom: 0;
+	padding: .625em 1em;
+	vertical-align: middle;
+	font-size: 1.6rem;
+	font-weight: 400;
+	line-height: 1.2;
+	text-align: center;
+	white-space: nowrap;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 0;
+	cursor: pointer;
+	outline: 0;
+	-webkit-appearance: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-transition: background-color 300ms ease-out,border-color 300ms ease-out;
+	transition: background-color 300ms ease-out,border-color 300ms ease-out;
+}
+[class*=oa-icon-] {
+	display: inline-block;
+}
+*, :before, :after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.oa-icon-caret-down:before {
+	content: "\f0d7";
+}
+[class*=oa-icon-]:before {
+	display: inline-block;
+	font-family: FontAwesome,sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	vertical-align: baseline;
+	line-height: 1;
+	font-size: inherit;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-transform: translate(0,0);
+	-ms-transform: translate(0,0);
+	transform: translate(0,0);
+}
+ul.oa-dropdown-content {
+	list-style: none;
+	padding: 5px 0;
+}element.style {
+}
+ul.oa-dropdown-content {
+	list-style: none;
+	padding: 5px 0;
+}
+.oa-dropdown-content {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 1020;
+	display: none;
+	float: left;
+	min-width: 160px;
+	padding: 15px;
+	margin: 9px 0 0;
+	text-align: left;
+	line-height: 1.6;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 0;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	-webkit-animation-duration: .15s;
+	animation-duration: .15s;
+}
+.oa-dropdown-header {
+	display: block;
+	padding: 6px 20px;
+	font-size: 1.2rem;
+	color: #999;
+}
+li {
+	display: list-item;
+	text-align: -webkit-match-parent;
+}
+ul.oa-dropdown-content>li>a {
+	display: block;
+	padding: 6px 20px;
+	clear: both;
+	font-weight: 400;
+	color: #333;
+	white-space: nowrap;
+}
+*, :before, :after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+</style>
+
+</head>
+<body>
+	<div class="oa-dropdown" data-oa-dropdown>
+	  <button id="btn" class="oa-btn oa-btn-primary oa-dropdown-toggle" data-oa-dropdown-toggle>下拉列表 <span class="oa-icon-caret-down"></span></button>
+	  <ul class="oa-dropdown-content">
+	    <li class="oa-dropdown-header">标题</li>
+	    <li><a href="#">快乐的方式不只一种</a></li>
+	    <li class="oa-active"><a href="#">最荣幸是</a></li>
+	    <li><a href="#">谁都是造物者的光荣</a></li>
+	    <li class="oa-disabled"><a href="#">就站在光明的角落</a></li>
+	    <li class="oa-divider"></li>
+	    <li><a href="#">天空海阔 要做最坚强的泡沫</a></li>
+	  </ul>
+	</div>
+
+	<button id="active">激活</button>
+	<button id="open">打开</button>
+	<button id="close">关闭</button>
+	<button id="toggle">交替</button>
+
+
+</body>
+
+<script>
+
+	$$('.oa-dropdown').on('open.dropdown.oa',function(){
+		alert('打开开始-----------') ;
+	}) ;
+	$$('.oa-dropdown').on('opened.dropdown.oa',function(){
+		alert('打开结束-----------') ;
+	}) ;
+	$$('.oa-dropdown').on('close.dropdown.oa',function(){
+		alert('关闭开始-----------') ;
+	}) ;
+	$$('.oa-dropdown').on('closed.dropdown.oa',function(){
+		alert('关闭结束-----------') ;
+	}) ;
+	$$('#btn').on('click',function(){
+		//$$('.oa-dropdown-content').slideToggle() ;
+	}) ;
+
+
+	$$('#active').on('click' , function(){
+		//激活
+		$$('.oa-dropdown').dropdown();
+	}) ;
+	$$('#open').on('click' , function(){
+		//打开
+		$$('.oa-dropdown').dropdown('open');
+	}) ;
+	$$('#close').on('click' , function(){
+		//关闭
+		$$('.oa-dropdown').dropdown('close');
+	}) ;
+	$$('#toggle').on('click' , function(){
+		//关闭
+		$$('.oa-dropdown').dropdown('toggle');
+	}) ;
+
+	
+</script>
+
+</html>
