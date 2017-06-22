@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>固定元素</title>
+	
+	<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+
+	<link rel="stylesheet" href="../public/css/amazeui.css">
+	<script  src="../../app/public/js/okayApp.core-1.0.js" ></script>
+	<script  src="../../app/public/js/okayApp.core.plugin.js" ></script>
+
+<style>
+.oa-scrollspynav{
+	width:100%;
+}
+.scrollspy-nav {
+	top: 0;
+	z-index: 100;
+	background: #0e90d2;
+	width: 100%;
+	padding: 0 10px;
+}
+.scrollspy-nav ul {
+	margin: 0;
+	padding: 0;
+}
+.scrollspy-nav li {
+	display: inline-block;
+	list-style: none;
+}
+.scrollspy-nav a.oa-active {
+	color: #fff;
+	font-weight: 700;
+}
+.scrollspy-nav a {
+	color: #eee;
+	padding: 10px 20px;
+	display: inline-block;
+}
+.oa-sticky{
+	/*position:static !important;*/
+}
+</style>
+
+</head>
+<body>
+	<div style="height:100px;"></div>
+
+	<div class="oa-sticky" style="height: 42px; width:100%; " data-oa-sticky="{top:10}">
+		<nav class="scrollspy-nav"   style="margin: 0px;">
+			<ul>
+				<li><a href="#about" class="oa-active">关于</a></li>
+				<li><a href="#team" class="">首页</a></li>
+				<li><a href="#ep" class="">****</a></li>
+			</ul>
+		</nav>
+	</div>
+	
+	<div style="height:1000px;">
+		
+		<ul>
+			<li>固定元素</li>
+			<li>固定元素</li>
+			<li>固定元素</li>
+			<li>固定元素</li>
+			<li>固定元素</li>
+			<li>固定元素</li>
+			<li>固定元素</li>
+			<li>固定元素</li>
+			<li>固定元素</li>
+			<li>固定元素</li>
+		</ul>
+	</div>
+
+</body>
+
+
+<script>
+var params = {
+	'top':20
+} ;
+// $$('.oa-sticky').sticky(params) ;
+	
+
+</script>
+</html>

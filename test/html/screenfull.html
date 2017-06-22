@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>全屏事件</title>
+
+	<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+
+	<script  src="../../app/public/js/okayApp.core-1.0.js" ></script>
+	<script  src="../../app/public/js/okayApp.core.plugin.js" ></script>
+
+</head>
+<body>
+	<img src="../public/images/carousel/pure-1.jpg" />
+	<button id="request">全屏</button>
+	<button id="exit">退出</button>
+	<button id="toggle">交替</button>
+</body>
+
+<script>
+	
+	$$('img').on('click',function(){
+		OA_Untils.screenfull.toggle($$(this)[0]) ;
+	}) ;
+
+	$$('#request').on('click',function(){
+		OA_Untils.screenfull.request();
+	}) ;
+
+	$$('#exit').on('click',function(){
+		OA_Untils.screenfull.exit();
+	});
+
+	$$('#toggle').on('click',function(){
+		OA_Untils.screenfull.toggle();
+	}) ;
+
+</script>
+
+</html>

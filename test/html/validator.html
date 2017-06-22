@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单验证</title>
+	
+	<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+
+	<link rel="stylesheet" href="../public/css/amazeui.css">
+	<script  src="../../app/public/js/okayApp.core-1.0.js" ></script>
+	<script  src="../../app/public/js/okayApp.core.plugin.js" ></script>
+
+<style>
+.vld-tooltip {
+	position: absolute;
+	z-index: 1000;
+	padding: 5px 10px;
+	background: #F37B1D;
+	min-width: 150px;
+	color: #fff;
+	transition: all 0.15s;
+	box-shadow: 0 0 5px rgba(0,0,0,.15);
+	display: none;
+}
+
+.vld-tooltip:before {
+	position: absolute;
+	top: -8px;
+	left: 50%;
+	width: 0;
+	height: 0;
+	margin-left: -8px;
+	content: "";
+	border-width: 0 8px 8px;
+	border-color: transparent transparent #F37B1D;
+	border-style: none inset solid;
+}
+</style>
+
+</head>
+<body>
+	<!-- h5原生验证 -->
+	<div class="oa-u-sm-6" >
+		<!-- novalidate="novalidate"  -->
+		<form class="oa-form" action="" data-oa-validator>
+			<fieldset>
+				<legend>H5 原生表单验证</legend>
+				<div class="oa-form-group">
+					<label for="doc-vld-noae-1">用户名：</label>
+					<input id="doc-vld-noae-1" class="oa-form-field" type="text" required="" placeholder="输入用户名" pattern="^\d+$" maxlength="3" vld-mes="用户名最大长度为3">
+				</div>
+				<div class="oa-form-group">
+					<label for="doc-vld-email-1">邮箱：</label>
+					<input id="doc-vld-email-1" type="email" required="" placeholder="输入邮箱" vld-mes="请输入正确邮箱">
+				</div>
+				<div class="oa-form-group">
+					<label for="doc-vld-url-1">网址：</label>
+					<input id="doc-vld-url-1" type="url" required="" placeholder="输入网址" vld-mes="请输入正确网址">
+				</div>
+				<div class="oa-form-group">
+					<label for="doc-vld-age-1">年龄：</label>
+					<input id="doc-vld-age-1" class="" type="number" required="" placeholder="输入年龄" max="100" vld-mes="年龄范围0~100">
+				</div>
+				<div class="oa-form-group">
+					<label for="doc-vld-ta-1">评论：</label>
+					<textarea id="doc-vld-ta-1" maxlength="100" minlength="10" vld-mes="评论长度10~100"></textarea>
+				</div>
+				<button class="oa-btn oa-btn-secondary" type="submit">提交</button>
+			</fieldset>
+		</form>
+	</div>
+
+
+
+	<div class="vld-tooltip" style="display: none; left: 474.25px; top: 600.3px;">至少填写 3 个字符</div>
+
+</body>
+
+<script>
+
+	// console.info($$('form :input')) ;
+	
+	// alert(typeof document.createElement('form').checkValidity) ;
+	// $$('form').validator() ;
+
+	// alert(typeof $$('#doc-vld-ta-1').attr('required')) ;
+	// var ua = navigator.userAgent.toLowerCase() ;
+	// var mt = ua.match(/mozilla/i) ;
+	// console.info(ua) ;
+	// console.info(mt=='mozilla') ;
+
+</script>
+
+</html>

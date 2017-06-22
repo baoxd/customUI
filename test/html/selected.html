@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>下拉选框</title>、
+	
+	<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+
+	<link rel="stylesheet" href="../public/css/amazeui.css">
+	<script  src="../../app/public/js/okayApp.core-1.0.js" ></script>
+	<script  src="../../app/public/js/okayApp.core.plugin.js" ></script>
+
+
+</head>
+<body>
+	<select data-oa-selected multiple>
+	  <option value="a" selected="selected">Apple</option>
+	  <option value="b" selected="selected">Banana</option>
+	  <option value="o" selected="selected">Orange</option>
+	  <option value="m">Mango</option>
+	  <option value="d" disabled>禁用鸟</option>
+	</select>
+
+	<div id="oa-selected-b1ocj" class="oa-selected oa-dropdown" data-oa-dropdown="">
+		<button class="oa-selected-btn oa-btn oa-dropdown-toggle oa-btn-default" type="button">
+			<span class="oa-selected-status oa-fl">Banana</span>
+			<i class="oa-selected-icon oa-icon-caret-down"></i>
+		</button>
+		<div class="oa-selected-content oa-dropdown-content" style="min-width: 200px;">
+			<h2 class="oa-selected-header">
+				<span class="oa-icon-chevron-left">返回</span>
+			</h2>
+			<ul class="oa-selected-list">
+				<li class="" data-value="a" data-group="0" data-index="0">
+					<span class="oa-selected-text">Apple</span>
+					<i class="oa-icon-check"></i>
+				</li>
+				<li class="oa-checked" data-value="b" data-group="0" data-index="1">
+					<span class="oa-selected-text">Banana</span>
+					<i class="oa-icon-check"></i>
+				</li>
+				<li class="" data-value="o" data-group="0" data-index="2">
+					<span class="oa-selected-text">Orange</span>
+					<i class="oa-icon-check"></i>
+				</li>
+				<li class="" data-value="m" data-group="0" data-index="3">
+					<span class="oa-selected-text">Mango</span>
+					<i class="oa-icon-check"></i>
+				</li>
+				<li class="oa-disabled" data-value="d" data-group="0" data-index="4">
+					<span class="oa-selected-text">禁用鸟</span>
+					<i class="oa-icon-check"></i>
+				</li>
+			</ul>
+			<div class="oa-selected-hint"></div>
+		</div>
+	</div>
+
+
+	<!-- <select name="" id="" multiple>
+		<option value="1">aa</option>
+		<option value="2">bb</option>
+		<option value="3">cc</option>
+	</select> -->
+
+	<button id="select">获取选中元素</button>
+
+</body>
+
+<script>
+	// console.info($$('select>option:selected')) ;
+	
+	// $$('select').selected() ;
+	
+	$$('select').on('changeDate.selected.oa',function(e){
+		// console.info(e.target) ;
+	}) ;
+
+	// $$('#select').on('click',function(){
+	// 	console.info($$('select').val()) ;
+	// }) ;
+
+</script>
+
+</html>

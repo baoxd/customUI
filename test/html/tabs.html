@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选项卡</title>
+
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+
+	<link rel="stylesheet" href="../public/css/amazeui.css">
+	<script  src="../../app/public/js/okayApp.core-1.0.js" ></script>
+	<script  src="../../app/public/js/okayApp.core.plugin.js" ></script>
+
+<style>
+	
+</style>
+
+</head>
+<body>
+	<div class="oa-tabs" data-oa-tabs="{swipe:'true'}">
+	  <ul class="oa-tabs-nav oa-nav oa-nav-tabs" >
+	    <li class="oa-active"><a href="javascript: void(0)">流浪</a></li>
+	    <li><a href="javascript: void(0)">流浪</a></li>
+	    <li><a href="javascript: void(0)">再流浪</a></li>
+	  </ul>
+
+	  <div class="oa-tabs-bd">
+	    <div class="oa-tab-panel oa-active">
+	      11111111111111111111111111111111111
+	    </div>
+	    <div class="oa-tab-panel">
+	      22222222222222222222222222222222222
+	    </div>
+	    <div class="oa-tab-panel">
+	      33333333333333333333333333333333333
+	    </div>
+	  </div>
+	</div>
+
+</body>
+
+<script>
+	// $$('.oa-nav-tabs').on('click','li>a',function(e){
+	// 	var tar = e.target ;
+	// 	if($$(tar).is('a')){
+	// 		var index = $$(tar).closest('li').index() ;
+	// 		console.info(index) ;
+	// 	}
+	// }) ;
+
+	// $$('.oa-tabs').tabs() ;
+
+	$$('.oa-tabs-nav>li').on('open.tabs.oa',function(e){
+		console.info(e);
+		console.info('打开之前-----------------------');
+		alert('打开之前') ;
+	}) ;
+
+	$$('.oa-tabs-nav>li').on('opened.tabs.oa',function(){
+		console.info('打开之后~~~~~~~~~~~~~~~~~~~~~~~');
+	}) ;
+
+</script>
+
+</html>

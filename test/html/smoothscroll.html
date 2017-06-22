@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>平滑滚动</title>
+
+	<link rel="stylesheet" href="../public/css/amazeui.css">
+	<script  src="../../app/public/js/okayApp.core-1.0.js" ></script>
+	<script  src="../../app/public/js/okayApp.core.plugin.js" ></script>
+
+<style>
+#goTop{
+	position: fixed;
+	bottom: 50px;
+	right: 50px;
+	padding: 8px;
+	background: #eeeeee;
+}
+#goTopByParam{
+	position: fixed;
+	bottom: 50px;
+	right: 150px;
+	padding: 8px;
+	background: #eeeeee;
+}
+</style>
+
+</head>
+<body>
+	<div style="height:1000px;">
+		<ul>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+			<li>不想回去。。。。。。。。。。。。。。。</li>
+		</ul>
+
+	</div>
+	<div id="goTop" class="oa-smoothscroll" data-oa-smoothscroll>回到</br>顶部</div>
+	<div id="goTopByParam" class="oa-smoothscroll" data-oa-smoothscroll="{height:100}">回到</br>150px</div>
+</body>
+
+<script>
+	
+	// $$('#goTop').smoothscroll() ;
+
+	var params = {
+		'height':100
+	} ;
+
+	// $$('#goTopByParam').smoothscroll(params) ;
+
+	$$('#goTop').on('click',function(){
+		$$('#goTop').smoothscroll('go') ;
+	});
+	$$('#goTopByParam').on('click',function(){
+		$$('#goTopByParam').smoothscroll('go') ;
+	});
+</script>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>弹出框</title>
+
+	<link rel="stylesheet" href="../public/css/amazeui.css">
+	<script  src="../../app/public/js/okayApp.core-1.0.js" ></script>
+	<script  src="../../app/public/js/okayApp.core.plugin.js" ></script>
+<style>
+#active{
+	position: absolute;
+	display:block;
+	width:100px;
+	height:50px;
+	left:70px;
+	top:70px;
+
+}
+
+</style>
+</head>
+<body>
+	<!-- <div class="oa-popover oa-active oa-popover-top" id="oa-popover-u5pfm" style="display: block; top:200px; left:200px;">
+		<div class="oa-popover-inner">鄙是点击显示的 Popover</div><div class="oa-popover-caret" style="left: 88px;">
+		</div>
+	</div> -->
+	
+	<button id="active" data-oa-popover="{content: '真心不想用这个属性......'}">激活</button>
+	<button id="open">打开</button>
+	<button id="close">关闭</button>
+	<button id="toggle">交替</button>
+
+
+
+
+</body>
+
+<script>
+
+	// 绑定事件
+	$$('#active').on('close.popover.oa',function(){
+		alert('我不想被关闭~~~~~~~~~') ;
+	}) ;
+
+	$$('#active').on('open.popover.oa',function(){
+		alert('我终于被打开了-------');
+	}) ;
+
+	
+	$$('#active').on('click' ,function(){
+		var params = {
+			'content':'这是一个popover的测试哦，不要太当真'
+		} ;
+		$$(this).popover(params) ;
+	}) ;
+
+	$$('#open').on('click',function(){
+		$$('#active').popover('open') ;
+	}) ;
+
+	$$('#close').on('click',function(){
+		$$('#active').popover('close') ;
+	});
+
+	$$('#toggle').on('click',function(){
+		$$('#active').popover('toggle') ;
+	}) ;
+
+
+</script>
+
+</html>
